@@ -1,0 +1,28 @@
+{
+    "users": [
+        {
+            "correu": "lorenzocremonese@gmail.com",
+            "contrasenya": "Lorenzo27!",
+            "tipus": "1",
+            "image": "img/face.png"
+        },
+        {
+            "correu": "ivanlloret@gmail.com",
+            "contrasenya": "Ivan9900!",
+            "tipus": "2",
+            "image": "img/face.png"
+        },
+        {
+            "correu": "adrianavarro@gmail.com",
+            "contrasenya": "Adria11!",
+            "tipus": "3",
+            "image": "img/face.png"
+        },
+        {
+            "correu": "lorenasiscar@gmail.com",
+            "contrasenya": "Lorena222!",
+            "tipus": "3",
+            "image": "img/face.png"
+        }
+    ]
+}
