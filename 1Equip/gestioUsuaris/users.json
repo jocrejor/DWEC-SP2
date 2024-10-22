@@ -1,0 +1,28 @@
+{
+    "users": [
+        {
+            "email": "lorenzocremonese@gmail.com",
+            "password": "Lorenzo27!",
+            "role": "1",
+            "image": "img/face.png"
+        },
+        {
+            "email": "ivanlloret@gmail.com",
+            "password": "Ivan9900!",
+            "role": "2",
+            "image": "img/face.png"
+        },
+        {
+            "email": "adrianavarro@gmail.com",
+            "password": "Adria11!",
+            "role": "3",
+            "image": "img/face.png"
+        },
+        {
+            "email": "lorenasiscar@gmail.com",
+            "password": "Lorena222!",
+            "role": "3",
+            "image": "img/face.png"
+        }
+    ]
+}
