@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DDL</title>
+</head>
+
+<body>
+    <p dir="ltr" style="text-align: left;"><em>NOTA: El DDL pot estar
+            incomplet o contindre alguna errada o inconsistència respecte a les
+            especificacions del projecte.&nbsp;&nbsp; En eixe cas comunica-ho a algun
+            professor per aclarir-ho.</em><br></p>
+
+
+    <p dir="ltr" style="text-align: left;">
+        #DDL:<br>##################################<br>#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        APLICACIÓ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+        #<br>##################################&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;
+        
+        
+        
+        <br>CREATE DATABASE IF NOT EXISTS warehouse_management;<br>USE
+        warehouse_management;
+        
+        
+        <br><br><br>#ENUM('Administrador', 'Encarregat', 'Operari')
+        <br>CREATE TABLE User(<br>
+        &nbsp;&nbsp;&nbsp; id INT AUTO_INCREMENT PRIMARY KEY,<br>
+        &nbsp;&nbsp;&nbsp; name VARCHAR(25) NOT NULL,<br>
+        &nbsp;&nbsp;&nbsp; email VARCHAR(40) NOT NULL,<br>
+        &nbsp;&nbsp;&nbsp; password VARCHAR(20) NOT NULL,<br>
+        &nbsp;&nbsp;&nbsp; user_profile_id INT,<br>
+        &nbsp;&nbsp;&nbsp; FOREIGN KEY (user_profile_id) REFERENCES User_profile(id)<br>
+        
+<br>);<br><br><br>
+
+        #Espanya, Alemanya, Dinamarca,...<br>
+        CREATE TABLE State (<br>
+        &nbsp;&nbsp;&nbsp; id INT AUTO_INCREMENT PRIMARY KEY,<br>
+        &nbsp;&nbsp;&nbsp;  name VARCHAR(50) NOT NULL<br>);
+        
+        
+        <br><br><br>
+        #Madrid, Valencia, Alacant, ...<br>
+        CREATE TABLE Province (<br>
+        &nbsp;&nbsp;&nbsp; id INT AUTO_INCREMENT PRIMARY KEY,<br>
+        &nbsp;&nbsp;&nbsp; name VARCHAR(25) NOT NULL,<br>
+        &nbsp;&nbsp;&nbsp; state_id INT,<br>
+        &nbsp;&nbsp;&nbsp; FOREIGN KEY (state_id) REFERENCES State(id)<br>
+        );<br>
+        <br>
+        #Pego, Denia, Oliva....<br>
+        CREATE TABLE City (<br>
+        &nbsp;&nbsp;&nbsp; id INT AUTO_INCREMENT PRIMARY KEY,<br>
+        &nbsp;&nbsp;&nbsp; name VARCHAR(40) NOT NULL,<br>
+        &nbsp;&nbsp;&nbsp; province_id INT,<br>
+        &nbsp;&nbsp;&nbsp; FOREIGN KEY (province_id) REFERENCES Province(id)&nbsp;&nbsp; &nbsp;<br>);<br>
+
+
+        #03780,46780,03700,....<br>
+        CREATE TABLE Cp(<br>
+        &nbsp;&nbsp;&nbsp; id INT AUTO_INCREMENT PRIMARY KEY,<br>
+        &nbsp;&nbsp;&nbsp; name INT(5) NOT NULL,<br>
+        );<br>
+        <br><br><br>
+        CREATE TABLE Client (<br>
+        &nbsp;&nbsp;&nbsp; id INT AUTO_INCREMENT PRIMARY KEY,<br>
+        &nbsp;&nbsp;&nbsp; name VARCHAR(60) NOT NULL,<br>
+        &nbsp;&nbsp;&nbsp; address VARCHAR(60),<br>
+        &nbsp;&nbsp;&nbsp; nif VARCHAR(10) NOT NULL,<br>
+        &nbsp;&nbsp;&nbsp; phone VARCHAR(15),<br>
+        &nbsp;&nbsp;&nbsp; email VARCHAR(20),<br>
+        &nbsp;&nbsp;&nbsp; state_id INT,<br>
+        &nbsp;&nbsp;&nbsp; province VARCHAR(20),<br>
+        &nbsp;&nbsp;&nbsp; city VARCHAR(40),<br>
+        &nbsp;&nbsp;&nbsp; cp VARCHAR(20),<br>
+        &nbsp;&nbsp;&nbsp; FOREIGN KEY (state_id) REFERENCES State(id)<br>
+        <br><br>
+        );<br>
+        </p>
+
+        CREATE TABLE Supplier (<br>
+        &nbsp;&nbsp;&nbsp; id INT AUTO_INCREMENT PRIMARY KEY,<br>
+        &nbsp;&nbsp;&nbsp; name VARCHAR(60) NOT NULL,<br>
+        &nbsp;&nbsp;&nbsp; address VARCHAR(60),<br>
+        &nbsp;&nbsp;&nbsp; nif VARCHAR(10) NOT NULL,<br>
+        &nbsp;&nbsp;&nbsp; phone VARCHAR(15),<br>
+        &nbsp;&nbsp;&nbsp; email VARCHAR(20),<br> 
+        &nbsp;&nbsp;&nbsp; state_id INT,<br>
+        &nbsp;&nbsp;&nbsp; province VARCHAR(20),<br>
+        &nbsp;&nbsp;&nbsp; city VARCHAR(40),<br>
+        &nbsp;&nbsp;&nbsp; cp VARCHAR(20),<br>
+        &nbsp;&nbsp;&nbsp; FOREIGN KEY (state_id) REFERENCES State(id)<br>
+        &nbsp;&nbsp; &nbsp;
+        
+        <br>);
+        
+        #lotorserial ENUM('Non', 'Lot', 'Serial')<br>
+        CREATE TABLE Product (<br>
+        &nbsp;&nbsp;&nbsp; id INT AUTO_INCREMENT PRIMARY KEY,<br>
+        &nbsp;&nbsp;&nbsp; sku VARCHAR(50) NOT NULL,<br>
+        &nbsp;&nbsp;&nbsp; name VARCHAR(50) NOT NULL,<br>
+        &nbsp;&nbsp;&nbsp; description TEXT,<br>
+        &nbsp;&nbsp;&nbsp; volume DECIMAL(10, 2),<br>
+        &nbsp;&nbsp;&nbsp; weight DECIMAL(10, 2),<br> 
+        &nbsp;&nbsp;&nbsp; lotorserial VARCHAR(7),<br>
+        &nbsp;&nbsp;&nbsp; image_url VARCHAR(255)<br>
+        );<br>
+        <br>
+
+        &nbsp;&nbsp;&nbsp; product_id INT,<br>
+        
+        #type ENUM('Reception', 'Shipping', 'General', 'Incident')<br>
+        CREATE TABLE  Storage (<br>
+        &nbsp;&nbsp;&nbsp; id VARCHAR(2) PRIMARY KEY,<br>
+        &nbsp;&nbsp;&nbsp; name VARCHAR(40) NOT NULL<br>
+        &nbsp;&nbsp;&nbsp; type VARCHAR(8) NOT NULL<br>
+        &nbsp;&nbsp;&nbsp; adress VARCHAR(60)<br>
+        );
+        <br><br>
+        
+        CREATE TABLE  Steet (<br>
+        &nbsp;&nbsp;&nbsp; id VARCHAR(2) PRIMARY KEY,<br>
+        &nbsp;&nbsp;&nbsp; name VARCHAR(40) NOT NULL<br>
+        &nbsp;&nbsp;&nbsp; storage_id  VARCHAR(2),<br>
+        &nbsp;&nbsp;&nbsp; FOREIGN KEY (storage_id) REFERENCES Storage(id),<br>
+        );
+        <br><br>
+        
+        
+        CREATE TABLE  Selft (<br>
+        &nbsp;&nbsp;&nbsp; id VARCHAR(2) PRIMARY KEY,<br>
+        &nbsp;&nbsp;&nbsp; name VARCHAR(40) NOT NULL<br>
+        &nbsp;&nbsp;&nbsp; storage_id  VARCHAR(2),<br>
+        &nbsp;&nbsp;&nbsp; steet_id  VARCHAR(2),<br>
+        &nbsp;&nbsp;&nbsp; FOREIGN KEY (storage_id) REFERENCES Storage(id),<br>
+        &nbsp;&nbsp;&nbsp; FOREIGN KEY (street_id) REFERENCES Street(id),<br>
+        );
+        <br><br>
+        
+        CREATE TABLE  Space (<br>
+        &nbsp;&nbsp;&nbsp; id VARCHAR(2) PRIMARY KEY,<br>
+        &nbsp;&nbsp;&nbsp; name VARCHAR(40) NOT NULL<br>
+        &nbsp;&nbsp;&nbsp; product_id INT<br>
+        &nbsp;&nbsp;&nbsp; quantity INT,<br>
+        &nbsp;&nbsp;&nbsp; storage_id  VARCHAR(2),<br>
+        &nbsp;&nbsp;&nbsp; steet_id  VARCHAR(2),<br>
+        &nbsp;&nbsp;&nbsp; selft_id  VARCHAR(2),<br>
+        &nbsp;&nbsp;&nbsp; FOREIGN KEY (storage_id) REFERENCES Storage(id),<br>
+        &nbsp;&nbsp;&nbsp; FOREIGN KEY (street_id) REFERENCES Street(id),<br>
+        &nbsp;&nbsp;&nbsp; FOREIGN KEY (selft_id) REFERENCES Selft(id),<br>
+        &nbsp;&nbsp;&nbsp; FOREIGN KEY (product_id) REFERENCES Product(id),<br>
+        );
+        <br><br>
+
+
+
+        #status ENUM('Pendent', 'Descarregada', 'Desempaquetada', 'Emmagatzemada')<br>
+        CREATE TABLE  OrderReception_Status (<br>
+        &nbsp;&nbsp;&nbsp; id INT AUTO_INCREMENT PRIMARY KEY,<br>
+        &nbsp;&nbsp;&nbsp; name VARCHAR(25) NOT NULL<br>
+        );
+        <br><br>
+        CREATE TABLE OrderReception (<br>
+        &nbsp;&nbsp;&nbsp; id INT AUTO_INCREMENT PRIMARY KEY,<br>
+        &nbsp;&nbsp;&nbsp; supplier_id INT,<br>
+        &nbsp;&nbsp;&nbsp; estimated_reception_date DATE,<br>
+        &nbsp;&nbsp;&nbsp; created_by INT,<br>
+        &nbsp;&nbsp;&nbsp; orderreception_status_id  INT,<br>
+        &nbsp;&nbsp;&nbsp; FOREIGN KEY (supplier_id) REFERENCES Supplier(id),<br>
+        &nbsp;&nbsp;&nbsp; FOREIGN KEY (created_by) REFERENCES User(id),<br>
+        &nbsp;&nbsp;&nbsp; FOREIGN KEY (orderreception_status_id) REFERENCES OrderReception_Status(id)<br>
+        );<br><br>
+        
+        #acceptance ENUM('Forçosa', 'Rebutjada', 'Completada'),<br>
+        CREATE TABLE OrderLineReception_Status (<br>
+        &nbsp;&nbsp;&nbsp; id INT AUTO_INCREMENT PRIMARY KEY,<br>
+        &nbsp;&nbsp;&nbsp; name VARCHAR(25) NOT NULL<br>
+        );<br>
+        <br>
+        
+        CREATE TABLE OrderLineReception (<br>
+        &nbsp;&nbsp;&nbsp; id INT AUTO_INCREMENT PRIMARY KEY,<br>
+        &nbsp;&nbsp;&nbsp; order_reception_id INT,<br>
+        &nbsp;&nbsp;&nbsp; orderlinereception_status_id INT,<br>
+        &nbsp;&nbsp;&nbsp; product_id INT,<br>
+        &nbsp;&nbsp;&nbsp; quantity_ordered INT NOT NULL,<br>
+        &nbsp;&nbsp;&nbsp; quantity_received INT,<br>
+        &nbsp;&nbsp;&nbsp; FOREIGN KEY (order_reception_id) REFERENCES OrderReception(id),<br>
+        &nbsp;&nbsp;&nbsp; FOREIGN KEY (orderlinereception_status_id) REFERENCES OrderLineReception_Status(id),<br>
+        &nbsp;&nbsp;&nbsp; FOREIGN KEY (product_id) REFERENCES Product(id)<br>
+        );<br>
+        <br>
+        
+        #Seur, DHL, MRW, FedEx, ...<br>
+        CREATE TABLE Carrier (<br>
+        &nbsp;&nbsp;&nbsp; id INT AUTO_INCREMENT PRIMARY KEY,<br>
+        &nbsp;&nbsp;&nbsp; name VARCHAR(60) NOT NULL,<br>
+        &nbsp;&nbsp;&nbsp; nif VARCHAR(10)  NOT NULL,<br>
+        &nbsp;&nbsp;&nbsp; phone VARCHAR(15),<br>
+        &nbsp;&nbsp;&nbsp; email VARCHAR(20)<br>
+        &nbsp;&nbsp;&nbsp; state_id INT,<br>
+        &nbsp;&nbsp;&nbsp; province VARCHAR(20),<br>
+        &nbsp;&nbsp;&nbsp; city VARCHAR(40),<br>
+        &nbsp;&nbsp;&nbsp; cp VARCHAR(20),<br>
+        &nbsp;&nbsp;&nbsp; FOREIGN KEY (state_id) REFERENCES State(id)<br>
+        );<br>
+        <br>
+        <br>
+
+
+        #status ENUM('Pendent', 'Preparant-se', 'Preparada', 'Enviada')<br>
+        CREATE TABLE OrderShipping_Status (<br>
+        &nbsp;&nbsp;&nbsp; id INT AUTO_INCREMENT PRIMARY KEY,<br>
+        &nbsp;&nbsp;&nbsp; name VARCHAR(25) NOT NULL<br>
+        );
+        <br>
+        <br>
+
+
+        CREATE TABLE OrderShipping (<br>
+        &nbsp;&nbsp;&nbsp; id INT AUTO_INCREMENT PRIMARY KEY,<br>
+        &nbsp;&nbsp;&nbsp; client_id  INT,<br>
+        &nbsp;&nbsp;&nbsp; prepared_by INT,<br>
+        &nbsp;&nbsp;&nbsp; shipping_date DATE,<br>
+        &nbsp;&nbsp;&nbsp; ordershipping_status_id INT,<br>
+        &nbsp;&nbsp;&nbsp; carrier_id INT,<br>
+        &nbsp;&nbsp;&nbsp; FOREIGN KEY (client_id) REFERENCES Client(id),<br>
+        &nbsp;&nbsp;&nbsp; FOREIGN KEY (carrier_id) REFERENCES Carrier(id),<br>
+        &nbsp;&nbsp;&nbsp; FOREIGN KEY (ordershipping_status_id) REFERENCES OrderShipping_Status(id),<br>
+        &nbsp;&nbsp;&nbsp; FOREIGN KEY (prepared_by) REFERENCES User(id)<br>
+        );<br>
+        <br>
+        
+        
+        
+        CREATE TABLE OrderLineShipping (<br>
+        &nbsp;&nbsp;&nbsp; id INT AUTO_INCREMENT PRIMARY KEY,<br>
+        &nbsp;&nbsp;&nbsp; shipping_order_id INT,<br>
+        &nbsp;&nbsp;&nbsp; product_id INT,<br>
+        &nbsp;&nbsp;&nbsp; quantity INT NOT NULL,<br>
+        &nbsp;&nbsp;&nbsp; lotorserial VARCHAR(40),<br>
+        &nbsp;&nbsp;&nbsp; FOREIGN KEY (shipping_order_id) REFERENCES OrderShipping(id),<br>
+        &nbsp;&nbsp;&nbsp; FOREIGN KEY (product_id) REFERENCES Product(id)<br>
+        );<br>
+        <br>
+        
+        
+        #origin ENUM('Reception', 'Shipping', 'Inventori', 'Incident')<br>
+        CREATE TABLE Movement (<br>
+        &nbsp;&nbsp;&nbsp; id INT AUTO_INCREMENT PRIMARY KEY,<br>
+        &nbsp;&nbsp;&nbsp; product_id INT,<br>
+        &nbsp;&nbsp;&nbsp; operator_id INT,<br>
+        &nbsp;&nbsp;&nbsp; quantity INT,<br>
+        &nbsp;&nbsp;&nbsp; origin VARCHAR(10),<br>
+        &nbsp;&nbsp;&nbsp; origin_id INT,<br>
+        
+        &nbsp;&nbsp;&nbsp; from_storage_id  VARCHAR(2),<br>
+        &nbsp;&nbsp;&nbsp; from_steet_id  VARCHAR(2),<br>
+        &nbsp;&nbsp;&nbsp; from_selft_id  VARCHAR(2),<br>
+        &nbsp;&nbsp;&nbsp; from_space_id  VARCHAR(2),<br>
+        &nbsp;&nbsp;&nbsp; to_storage_id  VARCHAR(2),<br>
+        &nbsp;&nbsp;&nbsp; to_steet_id  VARCHAR(2),<br>
+        &nbsp;&nbsp;&nbsp; to_selft_id  VARCHAR(2),<br>
+        &nbsp;&nbsp;&nbsp; to_space_id  VARCHAR(2),<br>
+        
+
+        &nbsp;&nbsp;&nbsp; movement_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,<br>
+        &nbsp;&nbsp;&nbsp; FOREIGN KEY (product_id) REFERENCES Product(id),<br>
+        &nbsp;&nbsp;&nbsp; FOREIGN KEY (operator_id) REFERENCES User(id)<br>
+
+        &nbsp;&nbsp;&nbsp; FOREIGN KEY (from_storage_id) REFERENCES Storage(id),<br>
+        &nbsp;&nbsp;&nbsp; FOREIGN KEY (from_street_id) REFERENCES Street(id),<br>
+        &nbsp;&nbsp;&nbsp; FOREIGN KEY (from_selft_id) REFERENCES Selft(id),<br>
+        &nbsp;&nbsp;&nbsp; FOREIGN KEY (from_space_id) REFERENCES Space(id),<br>
+        &nbsp;&nbsp;&nbsp; FOREIGN KEY (to_storage_id) REFERENCES Storage(id),<br>
+        &nbsp;&nbsp;&nbsp; FOREIGN KEY (to_street_id) REFERENCES Street(id),<br>
+        &nbsp;&nbsp;&nbsp; FOREIGN KEY (to_selft_id) REFERENCES Selft(id),<br>
+        &nbsp;&nbsp;&nbsp; FOREIGN KEY (to_space_id) REFERENCES Space(id),<br>
+
+        );<br>
+        <br>
+        
+        
+        CREATE TABLE Incident (<br>
+        &nbsp;&nbsp;&nbsp; incident_id INT AUTO_INCREMENT PRIMARY KEY,<br>
+        &nbsp;&nbsp;&nbsp; operator_id INT,<br>
+        &nbsp;&nbsp;&nbsp; description TEXT,<br>
+        &nbsp;&nbsp;&nbsp; created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,<br>
+        &nbsp;&nbsp;&nbsp; FOREIGN KEY (operator_id) REFERENCES User(user_id)<br>
+        );
+        <br>
+        <br>
+        
+        
+        CREATE TABLE Lot (<br>
+        &nbsp;&nbsp;&nbsp; id INT AUTO_INCREMENT PRIMARY KEY,<br>
+        &nbsp;&nbsp;&nbsp; name VARCHAR(40),<br>
+        &nbsp;&nbsp;&nbsp; product_id INT,<br>
+        &nbsp;&nbsp;&nbsp; supplier_id INT,<br>
+        &nbsp;&nbsp;&nbsp; quantity INT,<br>
+        &nbsp;&nbsp;&nbsp; production_date DATE,<br>
+        &nbsp;&nbsp;&nbsp; expiration_date DATE,<br>
+        &nbsp;&nbsp;&nbsp; FOREIGN KEY (product_id) REFERENCES Product(product_id)<br>
+        &nbsp;&nbsp;&nbsp; FOREIGN KEY (supplier_id) REFERENCES Supplier(supplier_id)<br>
+        );<br>
+        <br>
+        
+        
+        #reason ENUM('Defectuós', 'Trencat', 'Robatori', 'Desaparegut', 'Error administratiu', 'Recompte cíclic') NOT NULL,<br>
+        CREATE TABLE Inventory_Reason (<br>
+        &nbsp;&nbsp;&nbsp; id INT AUTO_INCREMENT PRIMARY KEY,<br>
+        &nbsp;&nbsp;&nbsp; name VARCHAR(25) NOT NULL<br>
+        );<br>
+        <br>
+        
+        
+        CREATE TABLE InventoryAdjustment (<br>
+        &nbsp;&nbsp;&nbsp; id INT AUTO_INCREMENT PRIMARY KEY,<br>
+        &nbsp;&nbsp;&nbsp; created_by INT,<br>
+        &nbsp;&nbsp;&nbsp; operator_id INT,<br>
+        &nbsp;&nbsp;&nbsp; inventory_reason_id INT,<br>
+        &nbsp;&nbsp;&nbsp; real_quantity INT,<br>
+        &nbsp;&nbsp;&nbsp; created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,<br>
+        &nbsp;&nbsp;&nbsp; FOREIGN KEY (inventory_reason_id) REFERENCES Inventory_Reason(id),<br>
+        &nbsp;&nbsp;&nbsp; FOREIGN KEY (created_by) REFERENCES User(id),<br>
+        &nbsp;&nbsp;&nbsp; FOREIGN KEY (operator_id) REFERENCES User(id)<br>
+        );<br>
+        <br>
+        <br>
+        
+        ##################################<br>
+        #&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        BLOG&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#<br>
+        ##################################&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp &nbsp;<br>
+        
+        
+        CREATE DATABASE IF NOT EXISTS warehouse_management_blog;<br>
+        USE warehouse_management_blog;<br>
+        <br>
+        
+        #ENUM('Administrador', 'Moderador', 'Publicador')<br>
+        
+        CREATE TABLE User (<br>
+        &nbsp;&nbsp;&nbsp; id INT AUTO_INCREMENT PRIMARY KEY,<br>
+        &nbsp;&nbsp;&nbsp; name VARCHAR(25) NOT NULL,<br>
+        &nbsp;&nbsp;&nbsp; email VARCHAR(40) NOT NULL,<br>
+        &nbsp;&nbsp;&nbsp; password VARCHAR(20) NOT NULL,<br>
+        &nbsp;&nbsp;&nbsp; user_profile_id INT,<br>
+        &nbsp;&nbsp;&nbsp; FOREIGN KEY (user_profile_id) REFERENCES User_profile(id)
+        &nbsp;&nbsp; &nbsp;<br>
+        );
+        <br>
+        <br>
+        
+        CREATE TABLE Post (<br>
+        &nbsp;&nbsp;&nbsp; id INT AUTO_INCREMENT PRIMARY KEY,<br>
+        &nbsp;&nbsp;&nbsp; title VARCHAR(100) NOT NULL,<br>
+        &nbsp;&nbsp;&nbsp; photo VARCHAR(40),<br>
+        &nbsp;&nbsp;&nbsp; creation_date DATETIME,<br>
+        &nbsp;&nbsp;&nbsp; creator_id INT,<br>
+        &nbsp;&nbsp;&nbsp; description TEXT,<br>
+        &nbsp;&nbsp;&nbsp; name VARCHAR(25) NOT NULL,<br>
+        &nbsp;&nbsp;&nbsp; FOREIGN KEY (creator_id) REFERENCES User(id)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+        );<br>
+        <br>
+        
+        
+        CREATE TABLE  Comment (<br>
+        &nbsp;&nbsp;&nbsp; id INT AUTO_INCREMENT PRIMARY KEY,<br>
+        &nbsp;&nbsp;&nbsp; description TEXT,<br>
+        &nbsp;&nbsp;&nbsp; post_id INT,<br>
+        &nbsp;&nbsp;&nbsp; FOREIGN KEY (post_id) REFERENCES Comment(id)<br>
+        );<br>
+        <br>
+        
+        
+        CREATE TABLE Tag (<br>
+        &nbsp;&nbsp;&nbsp; id INT AUTO_INCREMENT PRIMARY KEY,<br>
+        &nbsp;&nbsp;&nbsp; name VARCHAR(25) NOT NULL<br>
+        );<br>
+        <br>
+        
+        
+        CREATE TABLE Post_Tag (<br>
+        &nbsp;&nbsp;&nbsp; id INT AUTO_INCREMENT PRIMARY KEY,<br>
+        &nbsp;&nbsp;&nbsp; post_id INT,<br>
+        &nbsp;&nbsp;&nbsp; tag_id INT,<br>
+        &nbsp;&nbsp;&nbsp; FOREIGN KEY (post_id) REFERENCES Post(id),<br>
+        &nbsp;&nbsp;&nbsp; FOREIGN KEY (tag_id) REFERENCES Tag(id)<br>
+        );<br>
+        
+        <br><br><br><br>
+
+
+</body>
+
+</html>
