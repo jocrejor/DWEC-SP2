@@ -1,7 +1,7 @@
 {
     "Supplier": [
         {
-            "id": "000000001",
+            "id": 100000001,
             "name": "Suministros Técnicos S.L.",
             "address": "Calle Innovación,23",
             "nif": "B12345678",
@@ -12,7 +12,7 @@
             "cp": "28001"
         },
         {
-            "id": "000000002",
+            "id": 100000002,
             "name": "Componentes Electrónicos Avanzados S.A.",
             "address": "Avenida de la Tecnología, 45",
             "nif": "A87654321",
@@ -23,7 +23,7 @@
             "cp": "08001"
         },
         {
-            "id": "000000003",
+            "id": 100000003,
             "name": "Maquinaria de Cocina del Norte S.L.",
             "address": "Polígono Industrial El Progreso, Nave 12",
             "nif": "B98765432",
@@ -34,7 +34,7 @@
             "cp": "48001"
         },
         {
-            "id": "000000004",
+            "id": 100000004,
             "name": "Distribuciones Alimentarias del Sur S.A.",
             "address": "AlimSur",
             "nif": "A23456789",
@@ -45,7 +45,7 @@
             "cp": "41001"
         },
         {
-            "id": "000000005",
+            "id": 100000005,
             "name": "Soluciones Informáticas Gallegas S.A.",
             "address": "Rúa da Programación, 10",
             "nif": "A45678901",
@@ -56,7 +56,7 @@
             "cp": "15001"
         },
         {
-            "id": "000000006",
+            "id": 100000006,
             "name": "Decoración Andaluza S.A.",
             "address": "Calle del Diseño, 89",
             "nif": "A89012345",
@@ -67,7 +67,7 @@
             "cp": "29001"
         },
         {
-            "id": "000000007",
+            "id": 100000007,
             "name": "Suministros Médicos del Cantábrico S.L.",
             "address": "Avenida de la Salud, 23",
             "nif": "B90123456",
@@ -78,7 +78,7 @@
             "cp": "39001"
         },
         {
-            "id": "000000008",
+            "id": 100000008,
             "name": "Vinos y Licores de La Rioja S.A.",
             "address": "Carretera del Vino, Km 7",
             "nif": "A45678902",
@@ -89,7 +89,7 @@
             "cp": "26001"
         },
         {
-            "id": "000000009",
+            "id": 100000009,
             "name": "Tecnologías de la Información Murcianas S.L.",
             "address": "Avenida de la Informática, 34",
             "nif": "B56789013",
@@ -100,7 +100,7 @@
             "cp": "3001"
         },
         {
-            "id": "000000010",
+            "id": 100000010,
             "name": "Golosinas de Castilla-La Mancha S.A.",
             "address": "Camino del chocolate, 15",
             "nif": "A67890124",
@@ -111,7 +111,7 @@
             "cp": "02001"
         },
         {
-            "id": "000000011",
+            "id": 100000011,
             "name": "Equipamiento Deportivo Vasco S.A.",
             "address": "Calle del Deporte, 89",
             "nif": "A89012346",
@@ -122,7 +122,7 @@
             "cp": "01001"
         },
         {
-            "id": "000000012",
+            "id": 100000012,
             "name": "Tecnologías de la Información Murcianas S.L.",
             "address": "Avenida de la Informática, 34",
             "nif": "B56789013",
@@ -133,7 +133,7 @@
             "cp": "3001"
         },
         {
-            "id": "000000013",
+            "id": 100000013,
             "name": "TEDI S.A",
             "address": "Büyük Dereotu Sokak, 35",
             "nif": "56789013E",
@@ -144,7 +144,7 @@
             "cp": "54680"
         },
         {
-            "id": "000000014",
+            "id": 100000014,
             "name": "Cámaras de Seguridad Canarios S.L.",
             "address": "Avenida de la Informática, 34",
             "nif": "B34567891",
@@ -157,33 +157,33 @@
     ],
     "OrderReception_Status": [
         {
-            "id": "0001",
+            "id": 2001,
             "name": "Pendiente"
         },
         {
-            "id": "0002",
+            "id": 2002,
             "name": "Descargada"
         },
         {
-            "id": "0003",
+            "id": 2003,
             "name": "Desempaquetada"
         },
         {
-            "id": "0004",
+            "id": 2004,
             "name": "Almacenada"
         }
     ],
     "OrderLineReception_Status": [
         {
-            "id": "0001",
+            "id": 3001,
             "name": "Forzosa"
         },
         {
-            "id": "0002",
+            "id": 3002,
             "name": "Rechazada"
         },
         {
-            "id": "0003",
+            "id": 3003,
             "name": "Completada"
         }
     ]
