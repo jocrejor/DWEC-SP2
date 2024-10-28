@@ -43,6 +43,6 @@ const database = {
     }
   };
  
-  console.log(database.tables.Incident.data);
+ 
   
   
