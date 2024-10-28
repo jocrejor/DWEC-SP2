@@ -1,0 +1,37 @@
+[
+    {
+        "name": "Javier Garcia",
+        "id": "1000",
+        "nif": "63985818W",
+        "num": "654654654",
+        "email": "javiergarcia@gmail.com"
+    },
+    {
+        "name": "Carlos Mont",
+        "id": "1001",
+        "nif": "68458699G",
+        "num": "639639639",
+        "email": "carlos2@gmail.com"
+    },
+    {
+        "name": "Miquel Val",
+        "id": "1002",
+        "nif": "21223214X",
+        "num": "698658874",
+        "email": "val23@gmail.com"
+    },
+    {
+        "name": "Sara Gomez",
+        "id": "1003",
+        "nif": "11948676S",
+        "num": "695236451",
+        "email": "sareta@gmail.com"
+    },
+    {
+        "name": "Claudia Cardo",
+        "id": "1004",
+        "nif": "74413722M",
+        "num": "623596321",
+        "email": "clauclau@gmail.com"
+    }
+]
