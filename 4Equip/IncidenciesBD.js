@@ -7,7 +7,7 @@ const database = {
           { name: "description", type: "TEXT" },
           { name: "created_at", type: "TIMESTAMP", default: "CURRENT_TIMESTAMP" }
         ],
-        data: [
+        incident: [
           {
             incident_id: "0",
             operator_id: "3",
