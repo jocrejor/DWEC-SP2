@@ -1,0 +1,95 @@
+{
+    "lot": [
+        {
+            "id": 1,
+            "name": "LOTE-A0001",
+            "product_id": 101,
+            "supplier_id": 100000001,
+            "quantity": 500,
+            "production_date": "2024-01-15",
+            "expiration_date": "2024-07-15"
+        },
+        {
+            "id": 2,
+            "name": "LOTE-A0002",
+            "product_id": 102,
+            "supplier_id": 100000002,
+            "quantity": 750,
+            "production_date": "2024-01-20",
+            "expiration_date": "2024-08-20"
+        },
+        {
+            "id": 3,
+            "name": "LOTE-A0003",
+            "product_id": 103,
+            "supplier_id": 100000003,
+            "quantity": 1000,
+            "production_date": "2024-02-01",
+            "expiration_date": "2024-08-01"
+        },
+        {
+            "id": 4,
+            "name": "LOTE-A0004",
+            "product_id": 101,
+            "supplier_id": 100000004,
+            "quantity": 300,
+            "production_date": "2024-02-15",
+            "expiration_date": "2024-09-15"
+        },
+        {
+            "id": 5,
+            "name": "LOTE-A0005",
+            "product_id": 104,
+            "supplier_id": 100000005,
+            "quantity": 600,
+            "production_date": "2024-03-01",
+            "expiration_date": "2024-09-01"
+        },
+        {
+            "id": 6,
+            "name": "LOTE-A0006",
+            "product_id": 102,
+            "supplier_id": 100000006,
+            "quantity": 450,
+            "production_date": "2024-03-10",
+            "expiration_date": "2024-10-10"
+        },
+        {
+            "id": 7,
+            "name": "LOTE-A0007",
+            "product_id": 105,
+            "supplier_id": 100000007,
+            "quantity": 800,
+            "production_date": "2024-03-20",
+            "expiration_date": "2024-10-20"
+        },
+        {
+            "id": 8,
+            "name": "LOTE-A0008",
+            "product_id": 103,
+            "supplier_id": 100000008,
+            "quantity": 950,
+            "production_date": "2024-04-01",
+            "expiration_date": "2024-11-01"
+        },
+        {
+            "id": 9,
+            "name": "LOTE-A0009",
+            "product_id": 106,
+            "supplier_id": 100000009,
+            "quantity": 550,
+            "production_date": "2024-04-15",
+            "expiration_date": "2024-11-15"
+        },
+        {
+            "id": 10,
+            "name": "LOTE-A0010",
+            "product_id": 104,
+            "supplier_id": 100000010,
+            "quantity": 700,
+            "production_date": "2024-04-20",
+            "expiration_date": "2024-11-20"
+        }
+    ]
+}
+
