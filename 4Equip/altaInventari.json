@@ -1,0 +1,187 @@
+[
+    {
+        "inventory_adjustment": {
+            "id": 1,
+            "created_by": {
+                "id": 101,
+                "name": "Laura Jordà",
+                "email": "laura.jorda@hotmail.com",
+                "profile": "Administrador"
+            },
+            "Administrador": {
+                "id": 101,
+                "name": "Laura Jordà"
+            },
+            "inventory_reason": {
+                "id": 1,
+                "name": "Defectuós"
+            },
+            "product": {
+                "id": 201,
+                "sku": "7311025321427", 
+                "name": "Fuet Casa Tarradellas",
+                "description": "Embotit",
+                "volume": 0.25,
+                "weight": 0.5
+            },
+            "lot": {
+                "id": 301,
+                "name": "LOT-001",
+                "supplier_id": 401,
+                "quantity": 50,
+                "production_date": "2024-05-10",
+                "expiration_date": "2025-07-10"
+            },
+            "real_quantity": 48,
+            "created_at": "2024-10-28T09:00:00Z"
+        }
+    },
+    {
+        "inventory_adjustment": {
+            "id": 2,
+            "created_by": {
+                "id": 102,
+                "name": "Manuel Padilla",
+                "email": "manu.padpi@gmail.com",
+                "profile": "Operator"
+            },
+            "operator": {
+                "id": 102,
+                "name": "Manuel Padilla"
+            },
+            "inventory_reason": {
+                "id": 2,
+                "name": "Trencat"
+            },
+            "product": {
+                "id": 202,
+                "sku": "5051005000009",
+                "name": "PlayStation 5",
+                "description": "Consola de videojocs d'última generació",
+                "volume": 0.5,
+                "weight": 5
+            },
+            "lot": {
+                "id": 302,
+                "name": "LOT-002",
+                "supplier_id": 402,
+                "quantity": 100,
+                "production_date": "2024-06-15",
+                "expiration_date": "2025-06-15"
+            },
+            "real_quantity": 95,
+            "created_at": "2024-10-28T10:30:00Z"
+        }
+    },
+    {
+        "inventory_adjustment": {
+            "id": 3,
+            "created_by": {
+                "id": 103,
+                "name": "Miguel Ángel Roig",
+                "email": "miguimigui@gmail.com",
+                "profile": "Encarregat"
+            },
+            "operator": {
+                "id": 103,
+                "name": "Miguel Ángel Roig"
+            },
+            "inventory_reason": {
+                "id": 3,
+                "name": "Robatori"
+            },
+            "product": {
+                "id": 203,
+                "sku": "9780008150440",
+                "name": "Camiseta Temporada 24-25 Valencia C.F",
+                "description": "Equipo de futbol de 'la Liga'",
+                "volume": 1.5,
+                "weight": 3.2
+            },
+            "lot": {
+                "id": 303,
+                "name": "LOT-003",
+                "supplier_id": 403,
+                "quantity": 75,
+                "production_date": "2024-07-20",
+                "expiration_date": "2025-07-20"
+            },
+            "real_quantity": 70,
+            "created_at": "2024-10-28T11:00:00Z"
+        }
+    },
+    {
+        "inventory_adjustment": {
+            "id": 4,
+            "created_by": {
+                "id": 104,
+                "name": "Javier Manuel Cornejo",
+                "email": "javMan@gmail.com",
+                "profile": "Operari"
+            },
+            "operator": {
+                "id": 104,
+                "name": "Javier Manuel Cornejo"
+            },
+            "inventory_reason": {
+                "id": 4,
+                "name": "Desaparegut"
+            },
+            "product": {
+                "id": 204,
+                "sku": "4005555555551",
+                "name": "Pack XXL Kit-Kat",
+                "description": "Pack Gigante de chocolate Kit-Kat",
+                "volume": 0.1,
+                "weight": 0.2
+            },
+            "lot": {
+                "id": 304,
+                "name": "LOT-004",
+                "supplier_id": 404,
+                "quantity": 200,
+                "production_date": "2024-08-25",
+                "expiration_date": "2025-08-25"
+            },
+            "real_quantity": 198,
+            "created_at": "2024-10-28T12:15:00Z"
+        }
+    },
+    {
+        "inventory_adjustment": {
+            "id": 5,
+            "created_by": {
+                "id": 105,
+                "name": "Ivan Lloret",
+                "email": "sirKukos@gmail.com",
+                "profile": "Encarregat"
+            },
+            "operator": {
+                "id": 105,
+                "name": "Ivan Lloret"
+            },
+            "inventory_reason": {
+                "id": 5,
+                "name": "Error administratiu"
+            },
+            "product": {
+                "id": 205,
+                "sku": "9783161484100",
+                "name": "GeForce RTX 4090 OC",
+                "description": "Targeta  gràfica",
+                "volume": 0.5,
+                "weight": 1.4
+            },
+            "lot": {
+                "id": 305,
+                "name": "LOT-005",
+                "supplier_id": 405,
+                "quantity": 500,
+                "production_date": "2024-09-10",
+                "expiration_date": "2025-09-10"
+            },
+            "real_quantity": 502,
+            "created_at": "2024-10-28T13:45:00Z"
+        }
+    }
+]
