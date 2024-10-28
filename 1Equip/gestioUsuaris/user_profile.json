@@ -1,0 +1,7 @@
+{
+  "user_profile": [
+    { "id": 1, "name": "Administrador" },
+    { "id": 2, "name": "Encarregat" },
+    { "id": 3, "name": "Operari" }
+  ]
+}
