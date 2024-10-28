@@ -3,25 +3,25 @@ bbdd:{
     "Storage": [
       {
         "id": "01",
-        "name": "Reepció A",
+        "name": "Magatzem Recepció ",
         "type": "Reception",
         "address": "123 Main St, City, Country"
       },
       {
         "id": "02",
-        "name": "Enviament C",
+        "name": "Magatzem Enviament",
         "type": "Shipping",
         "address": "456 Side Ave, City, Country"
       },
       {
         "id": "03",
-        "name": "Principal",
+        "name": "Magatzem Principal",
         "type": "General",
         "address": "789 Central Blvd, City, Country"
       },
       {
         "id": "04",
-        "name": "Incidencies",
+        "name": "Magatzem Incidencies",
         "type": "Incident",
         "address": "1011 Elm St, City, Country"
       }
@@ -30,74 +30,89 @@ bbdd:{
     "Steet": [
       {
         "id": "01",
-        "name": "Main Entrance",
+        "name": "Carrer Recepció",
         "storage_id": "01"
       },
       {
         "id": "02",
+        "name": "Carrer Enviament",
+        "storage_id": "02"
+      },
+      {
+        "id": "04",
+        "name": "Carrer Incidencies",
+        "storage_id": "04"
+      },
+      {
+        "id": "01",
         "name": "Carrer 01",
         "storage_id": "03"
       },
       {
-        "id": "03",
+        "id": "02",
         "name": "Carrer 02",
         "storage_id": "03"
       },
       {
+        "id": "03",
+        "name": "Carrer 04",
+        "storage_id": "03"
+      },
+      {
         "id": "04",
-        "name": "Back Alley",
+        "name": "Carrer 04",
         "storage_id": "03"
       },
       {
         "id": "05",
-        "name": "Side Gate",
+        "name": "Carrer 05",
         "storage_id": "03"
       },
       {
         "id": "06",
-        "name": "Main Driveway",
+        "name": "Carrer 06",
         "storage_id": "03"
       },
       {
         "id": "07",
-        "name": "Secondary Loading Area",
-        "storage_id": "06"
-      },
+        "name": "Carrer 07",
+        "storage_id": "03"
+      }
       {
         "id": "08",
-        "name": "Customer Entrance",
+        "name": "Carrer 08",
         "storage_id": "03"
       },
       {
         "id": "09",
-        "name": "Employee Parking",
-        "storage_id": "07"
+        "name": "Carrer 09",
+        "storage_id": "03"
       },
       {
         "id": "10",
-        "name": "Restricted Zone",
-        "storage_id": "08"
-      }
+        "name": "Carrer 10",
+        "storage_id": "03"
+      },
     ],
 
   "Selft": [
     {
       "id": "01",
-      "name": "Section A1",
+      "name": "Estanteria Recepció",
       "storage_id": "01",
       "steet_id": "01"
     },
     {
-      "id": "02",
-      "name": "Section B1",
+      "id": "01",
+      "name": "Estanteria Enviament",
       "storage_id": "02",
-      "steet_id": "02"
+      "steet_id": "01"
     },
     {
       "id": "03",
       "name": "Section C1",
       "storage_id": "03",
-      "steet_id": "03"
+      "steet_id": "01"
     },
     {
       "id": "04",
