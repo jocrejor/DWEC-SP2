@@ -1,37 +1,37 @@
 "Carriers": [
     {
-        "name": "Javier Garcia",
+        "name": "Seur",
         "id": "1000",
         "nif": "63985818W",
         "phone": "654654654",
-        "email": "javiergarcia@gmail.com"
+        "email": "javier@seur.com"
     },
     {
-        "name": "Carlos Mont",
+        "name": "DHL",
         "id": "1001",
         "nif": "68458699G",
         "phone": "639639639",
-        "email": "carlos2@gmail.com"
+        "email": "carlos2@dhl.com"
     },
     {
-        "name": "Miquel Val",
+        "name": "MRW",
         "id": "1002",
         "nif": "21223214X",
         "phone": "698658874",
-        "email": "val23@gmail.com"
+        "email": "val23@mrw.com"
     },
     {
-        "name": "Sara Gomez",
+        "name": "FedEx",
         "id": "1003",
         "nif": "11948676S",
         "phone": "695236451",
-        "email": "sareta@gmail.com"
+        "email": "sareta@fedex.com"
     },
     {
-        "name": "Claudia Cardo",
+        "name": "CorreosExpress",
         "id": "1004",
         "nif": "74413722M",
         "phone": "623596321",
-        "email": "clauclau@gmail.com"
+        "email": "clauudia@correosexpress.com"
     }
 ]
