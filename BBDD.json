@@ -1,6 +1,4 @@
-{
-
-  "Storage": [
+{  "Storage": [
       {
         "id": "01",
         "name": "Magatzem Recepció ",
@@ -83816,7 +83814,8 @@
 
 
 
-
+    }
+    
 
   
 
