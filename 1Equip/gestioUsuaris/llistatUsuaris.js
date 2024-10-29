@@ -22,45 +22,42 @@ function obtindreUsuaris() {
 
   // recorrer l'arrray i mostar en pantalla els elements.
   users.forEach((user) => {
-    crearFila(user.id, user.email, user.user_profile_id);
+    crearFila(user);
   });
 }
 
-function crearFila(id, email, user_profile_id) {
+function crearFila(user) {
   const currentUserRole = JSON.parse(localStorage.getItem("currentUserRole"));
   const tableBody = document.querySelector("tbody");
 
   const newRow = document.createElement("tr");
-  newRow.setAttribute("id", id);
-
-  // Creació botons
-  const deleteButton = document.createElement("button");
-  deleteButton.addEventListener("click", () => esborrarUsuari(id));
-  const modifyButton = document.createElement("button");
-  deleteButton.addEventListener("click", () => modificarUsuari(id));
-  deleteButton.setAttribute("id", "esborrar");
-  deleteButton.classList.add("btn", "btn-primary", "btn-lg");
-  modifyButton.setAttribute("id", "modificar");
-  modifyButton.classList.add("btn", "btn-primary", "btn-lg");
-  const innerDeleteButton = document.createTextNode("Esborrar");
-  const innerModifyButton = document.createTextNode("Modificar");
-  deleteButton.appendChild(innerDeleteButton);
-  modifyButton.appendChild(innerModifyButton);
+  newRow.setAttribute("id", user.id);
   const tdDeleteButton = document.createElement("td");
   const tdModifyButton = document.createElement("td");
-  tdDeleteButton.appendChild(deleteButton);
-  tdModifyButton.appendChild(modifyButton);
 
-  if (currentUserRole != 1) {
-    deleteButton.style.display = "none";
-    modifyButton.style.display = "none";
+  // Creació botons
+  if (currentUserRole == 1 && user.id != 1) {
+    const deleteButton = document.createElement("button");
+    deleteButton.addEventListener("click", () => esborrarUsuari(user.id));
+    deleteButton.setAttribute("id", "esborrar");
+    deleteButton.classList.add("btn", "btn-primary", "btn-lg");
+    const innerDeleteButton = document.createTextNode("Esborrar");
+    deleteButton.appendChild(innerDeleteButton);
+    tdDeleteButton.appendChild(deleteButton);
+    const modifyButton = document.createElement("button");
+    modifyButton.addEventListener("click", () => modificarUsuari(user));
+    modifyButton.setAttribute("id", "modificar");
+    modifyButton.classList.add("btn", "btn-primary", "btn-lg");
+    const innerModifyButton = document.createTextNode("Modificar");
+    modifyButton.appendChild(innerModifyButton);
+    tdModifyButton.appendChild(modifyButton);
   }
 
   // Creació camps
   const tdEmail = document.createElement("td");
   const tdRole = document.createElement("td");
-  const innerTdEmail = document.createTextNode(email);
-  const innerTdRole = document.createTextNode(user_profile_id);
+  const innerTdEmail = document.createTextNode(user.email);
+  const innerTdRole = document.createTextNode(user.user_profile_id);
   tdEmail.appendChild(innerTdEmail);
   tdRole.appendChild(innerTdRole);
 
@@ -93,9 +90,9 @@ function esborrarUsuari(id) {
   rowToDelete.remove();
 }
 
-function modificarUsuari(id, nom, any) {
+function modificarUsuari(user) {
   //guardar valors al local storage
-  // localStorage.setItem("modAutor", JSON.stringify(autor));
+  localStorage.setItem("modUser", JSON.stringify(user));
 
-  window.location.assign("modificarAutors.html");
+  window.location.assign("modificarUsuaris.html");
 }
