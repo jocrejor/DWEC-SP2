@@ -4,6 +4,6 @@ document.addEventListener("DOMContentLoaded", () =>{
 });
 
 function carregar () {
-    localStorage.setItem("clients", JSON.stringify(Client));
+    localStorage.setItem("Client", JSON.stringify(Client));
 
 }

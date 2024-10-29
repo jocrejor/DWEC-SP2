@@ -93,7 +93,7 @@ let Storage = [
       }
     ];
 
-    let Selft = [
+    let Shelf = [
     {
       "id": "01",
       "name": "Estanteria Recepció",
@@ -222,7 +222,8 @@ let Storage = [
         "name": "buit Recepció",
         "product_id": 0,
         "quantity": 0,
-
+        "maxVol" : 1000,
+        "maxWeight" : 500, 
         "storage_id": "01",
         "steet_id": "01",
         "selft_id": "01"

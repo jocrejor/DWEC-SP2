@@ -14,9 +14,21 @@ function nouClient(){
 
 // Obtindre les dades
 function obtindreClients() {
-    // psar del JSON al localStorage. 
     //obtindre de localstorage 
+    let clients = JSON.parse(localStorage.getItem("Client"))
+    clients.forEach(element => {
+        afegirLinia(element)
+        
+    });
     // recorrer l'arrray i mostar en pantalla els elements.                
+}
+function afegirLinia(ele){
+    let files = document.getElementById("files");
+    let trEle= document.createElement("tr");
+    let tdEle= document.createElement("td");
+    let btnEle= document.createElement("button")
+    let btnTxt=
+
 }
 
 function esborrar (id){
