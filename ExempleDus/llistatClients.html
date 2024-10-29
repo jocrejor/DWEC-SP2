@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Llistat d'autors</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="BBDD.js"></script>    
+    <script type="text/javascript" src="./llistatClients.js"></script>
+    <style>
+        .error {
+            border: solid 2px #FF0000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Gestió de Clients</h1>
+        
+        <button class=" btn btn-primary my-3" id="nouAutor">Nou Autor</button></br>
+        <table class="table">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">Esborrar</th>
+                    <th scope="col">Modificar</th>
+                    <th scope="col">Visualitzar</th>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nom</th>
+                    <th scope="col">nif</th>                    
+                    <th scope="col">telèfon</th>
+                    <th scope="col">correu</th>
+
+                    
+                </tr>
+            </thead>
+            <tbody id="files">
+                <tr>
+                    <td><button class="btn btn-primary btn-lg">Esborrar</button></td>
+                    <td><button class="btn btn-primary btn-lg">Modificar</button></td>
+                    <td><button class="btn btn-primary btn-lg">Visualitzar</button></td
+                    <td>Nom Autor</td>
+                    <td>1900</td>
+                </tr>
+            </tbody>
+        </table>
+
+
+
+    </div>
+</body>
+
+</html>

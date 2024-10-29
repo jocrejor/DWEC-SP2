@@ -1,4 +1,4 @@
-{  "Storage": [
+let Storage = [
       {
         "id": "01",
         "name": "Magatzem Recepció ",
@@ -23,9 +23,9 @@
         "type": "Incident",
         "address": "1011 Elm St, City, Country"
       }
-    ],
+    ];
   
-    "Street": [
+    let Street =  [
       {
         "id": "01",
         "name": "Carrer Recepció",
@@ -91,9 +91,9 @@
         "name": "Carrer 10",
         "storage_id": "03"
       }
-    ],
+    ];
 
-  "Selft": [
+    let Selft = [
     {
       "id": "01",
       "name": "Estanteria Recepció",
@@ -214,9 +214,9 @@
       "storage_id": "03",
       "steet_id": "06"
     }
-  ],
+  ];
 
-    "Space": [
+  let Space = [
       {
         "id": "01",
         "name": "buit Recepció",
@@ -546,18 +546,18 @@
         "steet_id": "04",
         "selft_id": "01"
       }
-    ],
+    ];
 
 
-    "userProfile": [
+    let userProfile = [
         { "id": 1, "name": "Administrador" },
         { "id": 2, "name": "Encarregat" },
         { "id": 3, "name": "Operari" }
-      ],
+      ];
      
      
      
-      "users": [
+    let users = [
         {
             "email": "lorenzocremonese@gmail.com",
             "password": "Lorenzo27!",
@@ -582,9 +582,9 @@
             "role": "3",
             "image": "img/face.png"
         }
-    ],
+    ];
 
-      "State": [
+  let  State = [
         {
           "id": "1",
           "name": "Afghanistan"
@@ -1513,10 +1513,10 @@
           "id": "232",
           "name": "Zimbabwe"
         }
-      ],
+      ];
    
    
-      "Province": [
+  let Province = [
         {
           "state_id": "194",
           "id": "1",
@@ -1777,9 +1777,9 @@
           "id": "52",
           "name": "Melilla"
         }
-      ],
+      ];
 
-      "City": [
+  let City = [
         {
           "province_id": "1",
           "id": "1",
@@ -42435,11 +42435,132 @@
           "id": "8131",
           "name": "Melilla"
         }
-      ]
-    },
+      ];
 
-{
-    "Product":[
+let Client = [
+        {
+            "id": 1,
+            "name": "John Doe",
+            "address": "123 Main St",
+            "nif": "123456789A",
+            "phone": "123456789",
+            "email": "john.doe@example.com",
+            "state_id": 194,
+            "province": "Madrid",
+            "city": "Madrid",
+            "cp": "28001"
+        },
+        {
+            "id": 2,
+            "name": "Jane Smith",
+            "address": "456 Oak St",
+            "nif": "987654321B",
+            "phone": "987654321",
+            "email": "jane.smith@example.com",
+            "state_id": 194,
+            "province": "Barcelona",
+            "city": "Barcelona",
+            "cp": "08001"
+        },
+        {
+            "id": 3,
+            "name": "Carlos Perez",
+            "address": "789 Pine St",
+            "nif": "456123789C",
+            "phone": "456123789",
+            "email": "carlos.perez@example.com",
+            "state_id": 194,
+            "province": "Valencia",
+            "city": "Valencia",
+            "cp": "46001"
+        },
+        {
+            "id": 4,
+            "name": "Laura Martinez",
+            "address": "101 Maple St",
+            "nif": "321654987D",
+            "phone": "321654987",
+            "email": "laura.martinez@example.com",
+            "state_id": 194,
+            "province": "Sevilla",
+            "city": "Sevilla",
+            "cp": "41001"
+        },
+        {
+            "id": 5,
+            "name": "Miguel Sanchez",
+            "address": "202 Birch St",
+            "nif": "654789123E",
+            "phone": "654789123",
+            "email": "miguel.sanchez@example.com",
+            "state_id": 194,
+            "province": "Zaragoza",
+            "city": "Zaragoza",
+            "cp": "50001"
+        },
+        {
+            "id": 6,
+            "name": "Ana Gomez",
+            "address": "303 Cedar St",
+            "nif": "789123456F",
+            "phone": "789123456",
+            "email": "ana.gomez@example.com",
+            "state_id": 194,
+            "province": "Málaga",
+            "city": "Málaga",
+            "cp": "29001"
+        },
+        {
+            "id": 7,
+            "name": "David Torres",
+            "address": "404 Elm St",
+            "nif": "123789456G",
+            "phone": "123789456",
+            "email": "david.torres@example.com",
+            "state_id": 194,
+            "province": "Murcia",
+            "city": "Murcia",
+            "cp": "30001"
+        },
+        {
+            "id": 8,
+            "name": "Isabel Fernandez",
+            "address": "505 Walnut St",
+            "nif": "456987123H",
+            "phone": "456987123",
+            "email": "isabel.fernandez@example.com",
+            "state_id": 194,
+            "province": "Bilbao",
+            "city": "Bilbao",
+            "cp": "48001"
+        },
+        {
+            "id": 9,
+            "name": "Ricardo Lopez",
+            "address": "606 Spruce St",
+            "nif": "789654123I",
+            "phone": "789654123",
+            "email": "ricardo.lopez@example.com",
+            "state_id": 194,
+            "province": "Alicante",
+            "city": "Alicante",
+            "cp": "03001"
+        },
+        {
+            "id": 10,
+            "name": "Monica Ruiz",
+            "address": "707 Ash St",
+            "nif": "321987654J",
+            "phone": "321987654",
+            "email": "monica.ruiz@example.com",
+            "state_id": 194,
+            "province": "Córdoba",
+            "city": "Córdoba",
+            "cp": "14001"
+        }
+    ];
+
+  let Product = [
             
              {
                 "id": 1,
@@ -42500,10 +42621,10 @@
                 "image_url": "https://www.ejemplo.com/images/producto5.jpg"
             
             }
-        ],
+        ];
     
     
-          "lot": [
+    let lot = [
               {
                   "id": 1,
                   "name": "LOTE-A0001",
@@ -42594,10 +42715,10 @@
                   "production_date": "2024-04-20",
                   "expiration_date": "2024-11-20"
               }
-          ],
+          ];
 
      
-    "Supplier": [
+  let Supplier = [
       {
           "id": 100000001,
           "name": "Suministros Técnicos S.L.",
@@ -42766,10 +42887,10 @@
           "city": "Las Palmas de Gran Canaria",
           "cp": "3001"
       }
-  ],
+  ];
   
   
-  "OrderReception_Status": [
+  let OrderReception_Status = [
     {
         "id": 2001,
         "name": "Pendiente"
@@ -42786,8 +42907,9 @@
         "id": 2004,
         "name": "Almacenada"
     }
-],
-"OrderLineReception_Status": [
+];
+
+let OrderLineReception_Status = [
     {
         "id": 3001,
         "name": "Forzosa"
@@ -42800,9 +42922,9 @@
         "id": 3003,
         "name": "Completada"
     }
-],
+];
           
-"Carriers": [
+let Carriers = [
     {
         "name": "Seur",
         "id": "1000",
@@ -42838,9 +42960,9 @@
         "phone": "623596321",
         "email": "clauudia@correosexpress.com"
     }
-],
+];
 
-"incident": [
+let incident = [
     {
       "incident_id": "0",
       "operator_id": "3",
@@ -42871,9 +42993,9 @@
       "description": "La batería del producte es descarga ràpidament",
       "created_at": "CURRENT_TIMESTAMP"
     }
-  ],
+  ];
 
- "OrderReception" :  [
+ let OrderReception =  [
     {
         "id": 1,
         "supplier_id": 101,
@@ -42944,10 +43066,10 @@
         "created_by": 210,
         "orderreception_status_id": 3
     }
-],
+];
 
 
-"OrderLineReception" :[
+let OrderLineReception = [
   {
       "id": 1,
       "order_reception_id": 1,
@@ -43028,11 +43150,8 @@
       "quantity_ordered": 200,
       "quantity_received": 190
   }
-]
+];
 
-
-
-    }
     
 
   
