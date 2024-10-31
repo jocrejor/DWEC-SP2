@@ -9,7 +9,7 @@ obtindreClients();
     }
 
 function nouClient(){
-    window.location.assign("altaClient.html");
+    window.location.assign("./altaClient.html");
 }
 
 // Obtindre les dades
@@ -98,5 +98,5 @@ function esborrar (id){
         //guardar valors al local storage 
         localStorage.setItem("modAutor",JSON.stringify(autor));
         
-        window.location.assign("modificarAutors.html");
+        window.location.assign("modificarClient.html");
     }
