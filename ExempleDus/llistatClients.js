@@ -24,7 +24,7 @@ function obtindreClients() {
 }
 function afegirLinia(ele){
     let files = document.getElementById("files");
-    let trEli= document.createElement("tr");
+    let trfila= document.createElement("tr");
     let tdEli= document.createElement("td");
     let btnEli= document.createElement("button");
     let btnTxtEli= document.createTextNode("Esborrar");
@@ -32,7 +32,7 @@ function afegirLinia(ele){
     btnEli.addEventListener("click", () => esborrar(ele.id))
     btnEli.appendChild(btnTxtEli);
     tdEli.appendChild(btnEli);
-    trEli.appendChild(tdEli);
+    trfila.appendChild(tdEli);
 
 
     let tdMod= document.createElement("td");
@@ -40,11 +40,46 @@ function afegirLinia(ele){
     let btnTxtMod= document.createTextNode("Modificar");
     btnMod.className="btn btn-primary btn-lg";
     btnMod.addEventListener("click", () => modificar(ele.id))
-    btnMod.appendChild(btnMod);
+    btnMod.appendChild(btnTxtMod);
     tdMod.appendChild(btnMod);
+    trfila.appendChild(tdMod);
     
+    let tdVis= document.createElement("td");
+    let btnVis= document.createElement("button");
+    let btnTxtVis= document.createTextNode("Visualitzar");
+    btnVis.className="btn btn-primary btn-lg";
+    btnVis.addEventListener("click", () => modificar(ele.id))
+    btnVis.appendChild(btnTxtVis);
+    tdVis.appendChild(btnVis);
+    trfila.appendChild(tdVis);
 
-    files.appendChild(trEli);
+    let tdId= document.createElement("td");
+    let idTxt= document.createTextNode(ele.id);
+    tdId.appendChild(idTxt);
+    trfila.appendChild(tdId);
+
+    let tdNom= document.createElement("td");
+    let nomTxt= document.createTextNode(ele.name);
+    tdNom.appendChild(nomTxt);
+    trfila.appendChild(tdNom);
+
+    let tdNif= document.createElement("td");
+    let nifTxt= document.createTextNode(ele.nif);
+    tdNif.appendChild(nifTxt);
+    trfila.appendChild(tdNif);
+
+
+    let tdTel= document.createElement("td");
+    let telTxt= document.createTextNode(ele.phone);
+    tdTel.appendChild(telTxt);
+    trfila.appendChild(tdTel);
+
+    let tdEma= document.createElement("td");
+    let emaTxt= document.createTextNode(ele.email);
+    tdEma.appendChild(emaTxt);
+    trfila.appendChild(tdEma);
+
+    files.appendChild(trfila);
 
 }
 
